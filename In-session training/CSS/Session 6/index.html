@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Variables</title>
+    <style>
+        .skill {
+            margin-bottom: 50px;
+            font-family: Arial, sans-serif;
+            position: relative; /* عشان نتحكم في العناصر جواه */
+            margin-top: 40px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* هنا التركة كلها */
+        .per {
+            position: absolute;
+            left: var(--width); /* بياخد مكانه من المتغير */
+            bottom: 0px; /* ينزل لزق في الشريط */
+            transform: translateX(-50%) translateY(100%); /* يسنتر نفسه وتظبيط ارتفاع */
+            font-size: 1rem;
+            background: #fff;
+            padding: 2px 5px;
+        }
+        
+        /* سهم صغير تحت الرقم (اختياري) */
+        .per::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #333 transparent;
+        }
+
+        .progress {
+            background-color: #ddd;
+            height: 10px;
+            width: 100%;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #666;
+            border-radius: 6px;
+            width: var(--width); /* بياخد عرضه من نفس المتغير */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="skill" style="--width: 80%;">
+        <div class="skill-header">
+            <span>Branding</span>
+            <span class="per">80%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="skill" style="--width: 95%;">
+        <div class="skill-header">
+            <span>Web</span>
+            <span class="per">95%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <div class="skill" style="--width: 70%;">
+        <div class="skill-header">
+            <span>Development</span>
+            <span class="per">70%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+</body>
+</html>
