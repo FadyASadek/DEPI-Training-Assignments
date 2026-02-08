@@ -3,7 +3,8 @@
     padding: 0px;
     margin: 0px;
 }
-section {
+/* start landing */
+#landing {
     background-image: url(../image/Image\ \(4\).jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,7 +14,7 @@ section {
     justify-content: center;
     position: relative;
 }
-section::before{
+#landing::before{
     position: absolute;
     content: "";
     inset: 0;
@@ -63,3 +64,111 @@ section::before{
         line-height: 0.9;
     }
 }
+/* end landing */
+
+
+/* start Services */
+#Services {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.main-header{
+    text-align: center;
+    margin-bottom: 80px;
+}
+.main-header h2{
+    position: relative;
+    margin-top: 5px;
+    color: #32353e;
+    font-size: 40px;
+    font-weight: 800;
+}
+.main-header h2::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: aqua;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    bottom: -26px;
+}
+.main-header h2::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    background-color: #15c0c7;
+    height: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    animation:header 4s infinite ;
+}
+@keyframes header {
+    0%{
+        width: 150px;
+    }
+    50%{
+        width: 0px;
+    }
+    100%{
+        width: 150px;
+    }
+}
+.main-header h3{
+    line-height: 1.7;
+    font-weight: 500;
+    color: #32353e;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-family: Merienda, cursive;
+}
+.Services-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.Services-cards .s-card{
+    width: 300px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.s-card .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s-card .icon i{
+    background-color: #15c0c7;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color:white;
+}
+.s-card h3{
+    position: relative;
+    margin-top: 30px;
+    font-size: 25px;
+    color: #32353e;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.s-card h3::after{
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 1px;
+    background-color: rgb(184, 184, 184);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20PX;
+}
+.s-card p{
+    color:rgb(184, 184, 184);
+    font-size: 18px;
+    padding: 0px 10px;
+}
+/* end Services */
